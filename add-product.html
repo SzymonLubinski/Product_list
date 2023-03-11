@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <header class="row align-items-end mt-3">
+        <div class="col-8 font-weight-bold">
+            <h2 class="m-0">Product Add</h2>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="submit" form="product_form" name="saveProduct">Save</button>
+        </div>
+        <div class="col-2">
+            <a href="index.php" class="btn btn-primary">Cancel</a>
+        </div>
+    </header>
+    <hr>
+    <main class="w-xl-50 w-lg-50 w-md-50 center">
+        <form id="product_form" class="row row-cols-1 text-center justify-content-center needs-validation"
+              novalidate action="add_to_db.php" method="post">
+            <div class="col m-3">
+                <label for="sku" class="form-label m-0">Enter the SKU</label>
+                <input type="text" placeholder="SKU" id="sku" name="sku" required>
+                <div class="valid-feedback">correct</div>
+                <div class="invalid-feedback">Please, provide a unique SKU</div>
+            </div>
+            <div class="col m-3">
+                <label for="name" class="form-label m-0">Enter the Name</label>
+                <input type="text" placeholder="name" id="name" name="name" required>
+                <div class="valid-feedback">correct</div>
+                <div class="invalid-feedback">Please provide a product name</div>
+            </div>
+            <div class="col m-3">
+                <label for="price" class="form-label m-0">Enter the price ($)</label>
+                <input type="number" min="0.00" step="0.01" placeholder="0.00$" id="price" name="price" required>
+                <div class="valid-feedback">correct</div>
+                <div class="invalid-feedback">Please, provide the price</div>
+            </div>
+
+            <div class="col m-3">
+                <label for="productType" class="form-label m-0">Choose product type</label>
+                <select id="productType" class="custom-select" name="productType">
+                    <option value="DVD">DVD</option>
+                    <option value="Book">Book</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+            </div>
+            <div id="attributes">
+                <div id="DVD" class="row m-3 p-2 border border-dark oneOfThree">
+                    <input class="d-none" type="text" name="category-unit" value="Size|MB">
+                    <div class="col-12">
+                        <label for="size" class="form-label m-0">Size (MB)</label>
+                        <input type="number" min="0" placeholder="size" id="size" name="DVD" value="size" required>
+                        <div class="valid-feedback">correct</div>
+                        <div class="invalid-feedback">Please, provide size</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+
+<footer class="fixed-bottom">
+    <div class="row-col-12">
+        <p class="bg-dark text-light text-center m-0 p-3">Test for Scandiweb by Szymon Lubiński</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>
