@@ -4,7 +4,7 @@ Product list based on MySQL database. You can delete and add products.
 # Link
 - https://productlistbyszymon.000webhostapp.com
 
-#Technologies
+# Technologies
 - HTML
 - CSS
 - JavaScript
